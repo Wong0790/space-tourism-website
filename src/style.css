@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-[9.37rem] leading-normal font-normal font-bellefair;
+  }
+
+  h2 {
+    @apply text-[6.25rem] leading-normal font-normal font-bellefair;
+  }
+
+  h3 {
+    @apply text-[3.5rem] leading-normal font-normal font-bellefair;
+  }
+
+  h4 {
+    @apply text-[2rem] leading-normal font-normal font-bellefair;
+  }
+
+  h5 {
+    @apply text-[1.75rem] leading-normal font-normal font-barlow_condensed;
+  }
+
+  body {
+    @apply text-lg leading-8 text-white bg-no-repeat bg-right-top bg-cover font-barlow;
+  }
+}
+
+:root {
+  @apply bg-dark-blue;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#app {
+  padding: 3rem;
+}
+
+.subh1 {
+  @apply text-[1.75rem] leading-8 uppercase font-bellefair;
+}
+
+.subh2 {
+  @apply text-sm tracking-[2.35px] uppercase font-barlow_condensed;
+}
+
+.nav-text {
+  @apply text-base tracking-[2.7px] uppercase font-barlow_condensed;
+}
+
+.nav-text span {
+  @apply font-bold;
+}
+
+.bg-home {
+  @apply bg-[url('assets/home/background-mobile.jpg')] md:bg-[url('assets/home/background-tablet.jpg')] xl:bg-[url('assets/home/background-desktop.jpg')];
+}
+
+.bg-destination {
+  @apply bg-[url('assets/destination/background-mobile.jpg')] md:bg-[url('assets/destination/background-tablet.jpg')] xl:bg-[url('assets/destination/background-desktop.jpg')];
+}
+
+.bg-crew {
+  @apply bg-[url('assets/crew/background-mobile.jpg')] md:bg-[url('assets/crew/background-tablet.jpg')] xl:bg-[url('assets/crew/background-desktop.jpg')];
+}
+
+.bg-technology {
+  @apply bg-[url('assets/technology/background-mobile.jpg')] md:bg-[url('assets/technology/background-tablet.jpg')] xl:bg-[url('assets/technology/background-desktop.jpg')];
+}
+
+.navigation {
+  @apply flex flex-col md:flex-row items-center gap-[3.125rem] bg-white bg-opacity-5 backdrop-blur-xl h-24 md:max-w-[53rem] xl:max-w-[68rem] w-full pl-32 fixed top-10 right-0 z-0;
+}
+
+.navigation li {
+  @apply cursor-pointer h-full flex items-center gap-2;
+}
+
+.nav-active {
+  @apply border-b-[3px];
+}
+
+.nav-inactive {
+  @apply mb-[3px];
+}
