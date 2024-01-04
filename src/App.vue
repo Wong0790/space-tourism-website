@@ -1,29 +1,26 @@
 <script setup>
-import IconLogo from "./components/IconLogo.vue";
+import { ref } from "vue";
+import { useAppStore } from "./store/app";
+import { useScreenWidth } from "./composables/common.js";
+import IconLogo from "./components/icons/IconLogo.vue";
+import NavigationMenu from "./components/NavigationMenu.vue";
+import HomeContent from "./components/HomeContent.vue";
+import DestinationContent from "./components/DestinationContent.vue";
+
+const main = useAppStore();
+const { smallerThanMd } = useScreenWidth();
 </script>
 
 <template>
   <div>
-    <IconLogo />
-    <ul class="navigation nav-text">
-      <li class="nav-active"><span>00</span> home</li>
-      <li class="nav-inactive"><span>01</span> destination</li>
-      <li class="nav-inactive"><span>02</span> crew</li>
-      <li class="nav-inactive"><span>03</span> technology</li>
-    </ul>
-  </div>
-  <div class="mt-80">
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus
-    hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel,
-    dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet
-    viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam
-    mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit amet,
-    consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh
-    nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed
-    pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
-    eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse
-    potenti.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus
-    hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel,
-    dapibus id, mattis vel, nisi.
+    <div :class="{ 'flex items-center justify-between': smallerThanMd }">
+      <IconLogo />
+      <NavigationMenu />
+    </div>
+    <div class="body-content">
+      <component
+        :is="main.activeMenu === '00' ? HomeContent : DestinationContent"
+      ></component>
+    </div>
   </div>
 </template>
