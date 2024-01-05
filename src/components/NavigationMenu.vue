@@ -13,31 +13,30 @@ const showNavigation = ref(false);
 
 <template>
   <div>
-    <nav class="navigation nav-text" v-if="!smallerThanMd">
+    <IconHamburger
+      @click="showNavigation = true"
+      v-show="smallerThanMd && !showNavigation"
+    />
+    <nav
+      class="nav-text"
+      :class="!smallerThanMd ? 'navigation' : 'navigation-mobile'"
+      v-if="showNavigation || !smallerThanMd"
+    >
+      <IconClose @click="showNavigation = false" v-show="smallerThanMd" />
       <a
         v-for="item in menu"
         :key="item.id"
-        :class="item.id === main.activeMenu ? 'nav-active' : 'nav-inactive'"
+        class="cursor-pointer"
+        :class="
+          item.id === main.activeMenu && !smallerThanMd
+            ? 'nav-active'
+            : 'nav-inactive'
+        "
         @click="main.updateMenu(item.id)"
       >
         <span>{{ item.id }}</span>
         {{ item.title }}
       </a>
     </nav>
-    <div v-else>
-      <IconHamburger @click="showNavigation = true" v-show="!showNavigation" />
-      <div class="navigation-mobile nav-text" v-show="showNavigation">
-        <IconClose @click="showNavigation = false" />
-        <a
-          v-for="item in menu"
-          :key="item.id"
-          class="nav-inactive cursor-pointer"
-          @click="main.updateMenu(item.id)"
-        >
-          <span>{{ item.id }}</span>
-          {{ item.title }}
-        </a>
-      </div>
-    </div>
   </div>
 </template>

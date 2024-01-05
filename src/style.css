@@ -8,19 +8,19 @@
   }
 
   h2 {
-    @apply text-[6.25rem] leading-normal font-normal font-bellefair;
+    @apply text-[5rem] md:text-[6.25rem] leading-normal font-normal font-bellefair;
   }
 
   h3 {
-    @apply text-[3.5rem] leading-normal font-normal font-bellefair;
+    @apply text-2xl md:text-[3.5rem] leading-normal font-normal font-bellefair;
   }
 
   h4 {
-    @apply text-[2rem] leading-normal font-normal font-bellefair;
+    @apply text-base md:text-[2rem] leading-normal font-normal font-bellefair;
   }
 
   h5 {
-    @apply text-xl md:text-[1.75rem] leading-normal font-normal font-barlow_condensed;
+    @apply text-xl md:text-[1.75rem] leading-normal font-normal font-barlow_condensed uppercase;
   }
 
   body {
@@ -78,23 +78,31 @@ body {
 }
 
 .navigation-mobile {
-  @apply flex flex-col gap-8 bg-white bg-opacity-5 backdrop-blur-xl h-screen fixed top-0 right-0 px-8 pt-9 w-5/6 max-w-[15.875rem];
+  @apply flex flex-col gap-8 bg-white bg-opacity-5 backdrop-blur-xl h-screen fixed top-0 right-0 px-8 pt-9 w-5/6 max-w-[15.875rem] z-50;
+}
+
+.navigation-destination {
+  @apply flex justify-center lg:justify-start gap-9 h-8 cursor-pointer text-light-purple;
 }
 
 .navigation a {
-  @apply cursor-pointer h-full flex items-center gap-2;
+  @apply h-full flex items-center gap-2;
 }
 
 .nav-active {
-  @apply border-b-[3px];
+  @apply border-b-[3px] text-white;
 }
 
 .nav-inactive {
   @apply mb-[3px] hover:font-bold;
 }
 
+.navigation-destination a {
+  @apply hover:text-white;
+}
+
 .body-content {
-  @apply mt-20 lg:mt-80 p-0 md:px-10 lg:px-20 xl:px-40 flex flex-col items-center lg:items-baseline lg:flex-row gap-10 xl:gap-[20rem];
+  @apply p-0 md:px-10 lg:px-20 xl:px-40 flex flex-col items-center lg:items-baseline lg:flex-row gap-10;
 }
 
 .btn-explore {
@@ -103,4 +111,20 @@ body {
 
 .content-width {
   @apply flex-initial w-full md:w-5/6 lg:w-1/2;
+}
+
+.destination-container {
+  @apply text-light-purple mt-3 max-w-[27.75rem] lg:min-h-[14rem] border-b-[1px] border-[#383B4B] pb-9 lg:pb-14 mx-auto lg:ml-0;
+}
+
+.distance-travel-container {
+  @apply flex justify-between mt-3 lg:mt-7 max-w-[27.75rem] mx-auto lg:ml-0;
+}
+
+.crew-member-img {
+  @apply absolute bottom-0 right-2 xl:right-24;
+}
+
+.content-header {
+  @apply flex justify-center md:justify-start gap-7;
 }
