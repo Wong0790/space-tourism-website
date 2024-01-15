@@ -14,7 +14,7 @@ const { smallerThanMd } = useScreenWidth();
 
 <template>
   <div>
-    <div :class="{ 'flex items-center justify-between': smallerThanMd }">
+    <div :class="{ header: smallerThanMd }" class="px-6 md:px-12">
       <IconLogo />
       <NavigationMenu />
     </div>

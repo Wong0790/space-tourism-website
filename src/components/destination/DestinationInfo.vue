@@ -8,13 +8,13 @@ const main = useAppStore();
   <h2 class="uppercase mt-4 lg:mt-8 text-center lg:text-left">
     {{ main.destination.title }}
   </h2>
-  <div class="destination-container">
+  <p class="destination-container">
     {{ main.destination.description }}
-  </div>
+  </p>
   <div class="distance-travel-container">
     <div v-for="(item, cont) in main.destination.numbers" :key="cont">
       <div class="subh2 text-light-purple">
-        {{ cont === 0 ? "AVG. DISTANCE" : "Est. travel time" }}
+        {{ cont === 0 ? "Avg. Distance" : "Est. travel time" }}
       </div>
       <div class="subh1 uppercase mt-3">
         {{ item }}

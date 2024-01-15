@@ -1,4 +1,15 @@
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+const emit = defineEmits(["changeCrewImg"]);
+
+const circleN = ref(0);
+const cx = ["7.5", "46.5", "85.5", "124.5"];
+
+const onChange = (n) => {
+  emit("changeCrewImg", n);
+  circleN.value = n - 1;
+};
+</script>
 
 <template>
   <svg
@@ -8,30 +19,16 @@
     viewBox="0 0 132 15"
     fill="none"
   >
-    <circle cx="7.5" cy="7.5" r="7.5" fill="white" class="cursor-pointer" />
     <circle
-      opacity="0.174363"
-      cx="46.5"
+      v-for="(n, index) in 4"
+      :key="n"
+      :cx="cx[index]"
       cy="7.5"
       r="7.5"
       fill="white"
+      :opacity="index !== circleN ? '0.174363' : '1'"
       class="cursor-pointer"
-    />
-    <circle
-      opacity="0.174363"
-      cx="85.5"
-      cy="7.5"
-      r="7.5"
-      fill="white"
-      class="cursor-pointer"
-    />
-    <circle
-      opacity="0.174363"
-      cx="124.5"
-      cy="7.5"
-      r="7.5"
-      fill="white"
-      class="cursor-pointer"
+      @click="onChange(n)"
     />
   </svg>
 </template>
