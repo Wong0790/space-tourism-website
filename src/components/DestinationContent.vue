@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, onUnmounted } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
 import { addClass, removeClass } from "../composables/common.js";
 import NavigationDestination from "./destination/NavigationDestination.vue";
 import DestinationImg from "./destination/DestinationImg.vue";

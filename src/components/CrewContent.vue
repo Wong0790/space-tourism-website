@@ -40,7 +40,7 @@ onUnmounted(() => {
         >
           {{ crew[imgIndex - 1].position }}
         </h4>
-        <h3 class="uppercase text-center lg:text-left">
+        <h3 class="uppercase text-center lg:text-left lg:max-w-10">
           {{ crew[imgIndex - 1].name }}
         </h3>
         <p
