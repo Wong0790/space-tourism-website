@@ -1,7 +1,5 @@
 # Frontend Mentor - Space tourism website solution
 
-This is a solution to the [Space tourism website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3).
-
 ## Table of contents
 
 - [Frontend Mentor - Space tourism website solution](#frontend-mentor---space-tourism-website-solution)
@@ -51,7 +49,6 @@ Users should be able to:
 
 ## Author
 
-- Website - [Anneris Eloisa Wong Jorge](https://www.your-site.com)
 - Frontend Mentor - [@Wong0790](https://www.frontendmentor.io/profile/Wong0790)
 - Linkedin - [Anneris Wong Jorge](https://www.linkedin.com/in/anne-wong0790)
 - Github - [Anneris Wong Jorge](https://github.com/Wong0790)
